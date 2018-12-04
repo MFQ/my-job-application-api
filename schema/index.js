@@ -1,16 +1,9 @@
 const { gql } = require('apollo-server-express');
-const { userSchema, userMutation } = require('./UserSechma');
+// const { userSchema } = require('./userSchema');
 
 const typeDefs = gql`
   type Query {
     hello: String
-    me: User
-  }
-
-  ${userSchema}
-
-  type Mutation {
-    ${userMutation}
   }
 `;
 

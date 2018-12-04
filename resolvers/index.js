@@ -6,4 +6,8 @@ const resolver = {
   },
 };
 
+console.log('___________________');
+console.log(resolver);
+console.log('_____________________');
+
 module.exports = resolver;
