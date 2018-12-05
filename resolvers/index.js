@@ -1,13 +1,14 @@
+const { CountryQueryResolver } = require('./countryResolvers');
+
+console.log(CountryQueryResolver);
+
 const resolver = {
   Query: {
     hello(root) {
       return 'world';
     },
+    ...CountryQueryResolver,
   },
 };
-
-console.log('___________________');
-console.log(resolver);
-console.log('_____________________');
 
 module.exports = resolver;
