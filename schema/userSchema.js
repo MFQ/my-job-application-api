@@ -6,4 +6,4 @@ const userSchema = `
   }
 `;
 
-module.export = { userSchema };
+module.exports = { userSchema };
