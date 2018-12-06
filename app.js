@@ -41,7 +41,7 @@ app.use((err, req, res, next) => {
   }
 });
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers, context: req => ({ ...req }) });
 
 const jwtMW = jwt({
   secret: process.env.JWT_SECERT,
