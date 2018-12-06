@@ -5,7 +5,7 @@ const { companySchema, companyQuerySchema } = require('./companySchema');
 const {
   coverLetterSchema,
   coverLetterQuerySchema,
-  createCoverLetterMutations,
+  coverLetterMutations,
 } = require('./coverLetterSchema');
 
 const typeDefs = gql`
@@ -23,7 +23,7 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    ${createCoverLetterMutations}
+    ${coverLetterMutations}
   }
 `;
 

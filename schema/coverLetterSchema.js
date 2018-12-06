@@ -7,8 +7,12 @@ const coverLetterSchema = `
   }
 `;
 
-const createCoverLetterMutations = `
+const coverLetterMutations = `
   createCoverLetter(kind: String, content: String ): CoverLetter
+
+  deleteCoverLetter(id: Int): String
+
+  updateCoverLetter(id: Int, kind: String, content: String): String
 `;
 
 const coverLetterQuerySchema = `
@@ -18,5 +22,5 @@ const coverLetterQuerySchema = `
 module.exports = {
   coverLetterSchema,
   coverLetterQuerySchema,
-  createCoverLetterMutations,
+  coverLetterMutations,
 };
