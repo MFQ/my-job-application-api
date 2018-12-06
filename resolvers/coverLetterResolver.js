@@ -1,7 +1,7 @@
 const { CoverLetter } = require('../models');
 const { getUserId } = require('../utils/auth');
 
-const CoverLetterResolver = {
+const CoverLetterQueryResolver = {
   coverletters(obj, args, context) {
     const { req: { headers: { authorization } } } = context;
     const { userId } = getUserId(authorization);
@@ -10,4 +10,14 @@ const CoverLetterResolver = {
   },
 };
 
-module.exports = { CoverLetterResolver };
+const CoverLetterMutationResolver = {
+  createCoverLetter(obj, args, context) {
+    const { req: { headers: { authorization } } } = context;
+    const { userId } = getUserId(authorization);
+    const { kind, content } = args;
+
+    return CoverLetter.create({ userId, kind, content }).then(coverletter => coverletter);
+  },
+};
+
+module.exports = { CoverLetterQueryResolver, CoverLetterMutationResolver };

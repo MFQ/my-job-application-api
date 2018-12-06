@@ -1,6 +1,6 @@
 const { CountryQueryResolver } = require('./countryResolvers');
 const { CompanyQueryResolver } = require('./companyResolvers');
-const { CoverLetterResolver } = require('./coverLetterResolver');
+const { CoverLetterQueryResolver, CoverLetterMutationResolver } = require('./coverLetterResolver');
 const { userResolver } = require('./userResolver');
 
 const resolver = {
@@ -11,7 +11,11 @@ const resolver = {
     ...userResolver,
     ...CompanyQueryResolver,
     ...CountryQueryResolver,
-    ...CoverLetterResolver,
+    ...CoverLetterQueryResolver,
+  },
+
+  Mutation: {
+    ...CoverLetterMutationResolver,
   },
 };
 

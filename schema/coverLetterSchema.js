@@ -7,8 +7,16 @@ const coverLetterSchema = `
   }
 `;
 
+const createCoverLetterMutations = `
+  createCoverLetter(kind: String, content: String ): CoverLetter
+`;
+
 const coverLetterQuerySchema = `
   coverletters: [CoverLetter]
 `;
 
-module.exports = { coverLetterSchema, coverLetterQuerySchema };
+module.exports = {
+  coverLetterSchema,
+  coverLetterQuerySchema,
+  createCoverLetterMutations,
+};
