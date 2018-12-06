@@ -1,5 +1,6 @@
 const { CountryQueryResolver } = require('./countryResolvers');
 const { CompanyQueryResolver } = require('./companyResolvers');
+const { CoverLetterResolver } = require('./coverLetterResolver');
 
 const resolver = {
   Query: {
@@ -8,6 +9,7 @@ const resolver = {
     },
     ...CompanyQueryResolver,
     ...CountryQueryResolver,
+    ...CoverLetterResolver,
   },
 };
 
