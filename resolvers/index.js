@@ -1,12 +1,12 @@
 const { CountryQueryResolver } = require('./countryResolvers');
-
-console.log(CountryQueryResolver);
+const { CompanyQueryResolver } = require('./companyResolvers');
 
 const resolver = {
   Query: {
     hello(root) {
       return 'world';
     },
+    ...CompanyQueryResolver,
     ...CountryQueryResolver,
   },
 };
