@@ -8,11 +8,18 @@ const {
   coverLetterMutations,
 } = require('./coverLetterSchema');
 
+const {
+  jobApplicationSchema,
+  jobApplicationsMutations,
+  jobApplicationQuerySchema,
+} = require('./jobApplicationSchema');
+
 const typeDefs = gql`
   ${countrySchema}
   ${companySchema}
   ${coverLetterSchema}
   ${userSchema}
+  ${jobApplicationSchema}
 
   type Query {
     hello: String
@@ -20,10 +27,12 @@ const typeDefs = gql`
     ${countryQuerySchema}
     ${companyQuerySchema}
     ${coverLetterQuerySchema}
+    ${jobApplicationQuerySchema}
   }
 
   type Mutation {
     ${coverLetterMutations}
+    ${jobApplicationsMutations}
   }
 `;
 
