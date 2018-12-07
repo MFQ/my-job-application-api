@@ -17,7 +17,7 @@ router.post('/login', (req, res) => {
     bcrypt.compare(password, user.password).then((valid) => {
       if (valid) {
         const token = jsonwebtoken.sign(
-          { id: user.id, email: user.email },
+          { userId: user.id, email: user.email },
           process.env.JWT_SECERT,
           { expiresIn: '1d' },
         );
@@ -48,7 +48,7 @@ router.post('/signup', (req, res) => {
         password: decryptPassword,
       }).then((newUser) => {
         const token = jsonwebtoken.sign(
-          { id: newUser.id, email: newUser.email },
+          { userId: newUser.id, email: newUser.email },
           process.env.JWT_SECERT,
           { expiresIn: '1y' },
         );

@@ -2,8 +2,12 @@ const userSchema = `
   type User {
     username: String
     email: String
-
+    id: Int
   }
 `;
 
-module.export = { userSchema };
+const meSchema = `
+  me: User
+`;
+
+module.exports = { userSchema, meSchema };

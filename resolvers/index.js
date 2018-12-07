@@ -1,13 +1,22 @@
+const { CountryQueryResolver } = require('./countryResolvers');
+const { CompanyQueryResolver } = require('./companyResolvers');
+const { CoverLetterQueryResolver, CoverLetterMutationResolver } = require('./coverLetterResolver');
+const { userResolver } = require('./userResolver');
+
 const resolver = {
   Query: {
     hello(root) {
       return 'world';
     },
+    ...userResolver,
+    ...CompanyQueryResolver,
+    ...CountryQueryResolver,
+    ...CoverLetterQueryResolver,
+  },
+
+  Mutation: {
+    ...CoverLetterMutationResolver,
   },
 };
-
-console.log('___________________');
-console.log(resolver);
-console.log('_____________________');
 
 module.exports = resolver;
