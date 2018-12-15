@@ -23,6 +23,8 @@ router.post('/login', (req, res) => {
         );
         return res.send({ status: 200, token });
       }
+
+      return res.send({ status: 403, error: 'Email and Password does not match' });
     });
   });
 });
