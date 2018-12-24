@@ -16,7 +16,7 @@ const coverLetterMutations = `
 `;
 
 const coverLetterQuerySchema = `
-  coverletters: [CoverLetter]
+  coverletters( id: Int ): [CoverLetter]
 `;
 
 module.exports = {

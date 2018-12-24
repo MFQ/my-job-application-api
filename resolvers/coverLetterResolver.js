@@ -1,12 +1,16 @@
 const { CoverLetter } = require('../models');
 const { getUserId } = require('../utils/auth');
+const { omitBy } = require('lodash');
 
 const CoverLetterQueryResolver = {
   coverletters(obj, args, context) {
     const { req: { headers: { authorization } } } = context;
     const { userId } = getUserId(authorization);
+    const whereClause = omitBy(args, val => val === '');
 
-    return CoverLetter.findAll({ where: { userId } }).then(coverletters => coverletters);
+    return CoverLetter.findAll({ where: { userId, ...whereClause } }).then(
+      coverletters => coverletters,
+    );
   },
 };
 
