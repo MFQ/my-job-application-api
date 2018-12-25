@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       coverLetter: DataTypes.STRING,
       source: DataTypes.STRING,
       response: DataTypes.STRING,
-      timeTookToApply: DataTypes.DATE,
+      timeTookToApply: DataTypes.STRING,
       country: DataTypes.STRING,
       notes: DataTypes.STRING,
     },

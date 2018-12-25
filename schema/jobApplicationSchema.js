@@ -17,16 +17,16 @@ const jobApplicationSchema = `
 `;
 
 const jobApplicationsMutations = `
-  createJobApplications(company: String, soure: String, country: String, status: String, appliedDate: String, coverLetter: String, source: String, response: String, timeTookToApply: String, country: String, notes: String): [JobApplication]
+  createJobApplications(company: String, country: String, status: String, appliedDate: String, coverLetter: String, source: String, response: String, timeTookToApply: String, country: String, notes: String, jobDescription: String ): [JobApplication]
 
-  updateJobApplication(company: String, soure: String, country: String, status: String, appliedDate: String, coverLetter: String, source: String, response: String, timeTookToApply: String, country: String, notes: String ): String
+  updateJobApplication(id: Int, company: String, country: String, status: String, appliedDate: String, coverLetter: String, source: String, response: String, timeTookToApply: String, country: String, notes: String, jobDescription: String ): String
 
   deleteJobApplication(id: Int): String
 `;
 
 const jobApplicationQuerySchema = `
 
-  jobApplications( company: String, jobDescription: String, status:String, coverLetter:String, appliedDate: String): [JobApplication]
+  jobApplications( id: Int, company: String, jobDescription: String, status:String, coverLetter:String, appliedDate: String): [JobApplication]
 
 `;
 

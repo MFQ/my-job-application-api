@@ -6,7 +6,7 @@ module.exports = {
       primaryKey: true,
       type: Sequelize.INTEGER,
     },
-    conpany: {
+    company: {
       type: Sequelize.STRING,
     },
     userId: {

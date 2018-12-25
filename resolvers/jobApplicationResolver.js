@@ -16,14 +16,14 @@ const JobApplicationQueryResolver = {
 };
 
 const JobApplicationMutationResolver = {
-  createCoverLetter(obj, args, context) {
+  createJobApplications(obj, args, context) {
     const { req: { headers: { authorization } } } = context;
     const { userId } = getUserId(authorization);
 
-    return JobApplication.create({ userId, ...args }).then(coverletter => coverletter);
+    return JobApplication.create({ userId, ...args }).then(jobApplication => [jobApplication]);
   },
 
-  updateCoverLetter(obj, args, context) {
+  updateJobApplication(obj, args, context) {
     const { req: { headers: { authorization } } } = context;
     const { userId } = getUserId(authorization);
     const payload = omitBy(args, (val, key) => val === '' || key === 'id');
