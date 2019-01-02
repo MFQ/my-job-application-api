@@ -13,7 +13,7 @@ module.exports = {
       type: Sequelize.INTEGER,
     },
     jobDescription: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     status: {
       type: Sequelize.STRING,
@@ -22,13 +22,13 @@ module.exports = {
       type: Sequelize.DATE,
     },
     coverLetter: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     source: {
       type: Sequelize.STRING,
     },
     response: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     timeTookToApply: {
       type: Sequelize.STRING,
@@ -37,7 +37,7 @@ module.exports = {
       type: Sequelize.STRING,
     },
     notes: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     createdAt: {
       allowNull: false,
